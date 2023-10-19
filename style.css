@@ -1,0 +1,73 @@
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body{
+  background-color: cadetblue;
+}
+
+header, footer{
+  height: 5vh;
+  background-color: gainsboro;
+  
+}
+
+li{
+  margin: 10px;
+}
+ul, li, a{
+  list-style: none;
+  text-decoration: none;
+  color: black;
+}
+.container{
+  flex-direction: column;
+  height: 90vh;
+}
+
+.container, section, ul, header, .choices {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+section{
+  height: 20%;
+  width: 30%;
+  margin: 10px;
+  border-radius: 10px;
+}
+section:hover{
+  box-shadow: gainsboro 1px 5px 5px;
+  cursor: pointer;
+}
+
+.first{
+  background-color: aqua;
+}
+.second{
+  background-color: pink;
+}
+/* PAGE 2 */
+.play{
+  background-color: aqua;
+  max-height: 100px;
+  width: 200px;
+}
+/* page 3 */
+.container.game{
+  flex-direction: column;
+}
+.choices{
+  flex-wrap: wrap;
+  height: 50%;
+  justify-content: space-around;
+}
+.choice{
+  background-color: aqua;
+}
+.letter{
+  font-weight: bold;
+  font-size: larger;
+}
