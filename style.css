@@ -71,3 +71,7 @@ section:hover{
   font-weight: bold;
   font-size: larger;
 }
+
+.bg-red {
+  background-color: red;
+}

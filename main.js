@@ -1,6 +1,6 @@
 //Utiliser PI pour voir toutes les lettres ?
-let alphabet = {
-  first : {
+let alphabet = [
+ {
     letter : "A",
     begining : "A DEBUT",
     middle : 'A MILIEU',
@@ -11,7 +11,7 @@ let alphabet = {
       `J'ai vu un ${this.word}`
     }
   },
-  second : {
+  {
    letter : "B",
    begining : "B DEBUT",
    middle : 'B MILIEU',
@@ -23,7 +23,7 @@ let alphabet = {
    }
  },
 
- third : {
+ {
    letter : "C",
    begining : "C DEBUT",
    middle : 'C MILIEU',
@@ -35,7 +35,7 @@ let alphabet = {
    }
  },
 
- four : {
+ {
    letter : "D",
    begining : "D DEBUT",
    middle : 'D MILIEU',
@@ -47,7 +47,7 @@ let alphabet = {
    }
  },
 
- fifth : {
+ {
    letter : "E",
    begining : "E DEBUT",
    middle : 'E MILIEU',
@@ -59,36 +59,77 @@ let alphabet = {
    }
  },
 
-}
-
-//A la page game appuyer sur commencer le jeu
-//  au click afficher les cartes de lettres
-// afficher le titre de la lettre choisie au hasard
-// // choisir la lettre qui correspond au titre
-
-let randomLetter = alphabet[Object.keys(alphabet)[Math.floor(Math.random()*Object.keys(alphabet).length)]]
-document.querySelector('.main').innerText = randomLetter.letter
-// mettre lettre dans chaque case
-let answers = document.getElementsByClassName('.answer')
-
-for (const i = 0; i < answers.length ; i++){
-  const item = answers[i]
-  iteminnerText = randomLetter.letter 
-}
-
-console.log(document.querySelectorAll('.answer'))
-// let myChoice = document.querySelector('.choice').val
-// function isValid("onclick", ){
-//   if(originalLetter.value === matchLetter.value){
-//     matchLetter.style.backgroundColor = "green"
-//     // changer de lettre
-//   }else{
-//     matchLetter.style.backgroundColor = "red"
-//   }
+]
+// les variables dont j'ai besoin ==>
+// filter juste les lettres initiales de l'alphabet
+const filterInitialLetters = alphabet.map(initial => {
+  return initial.letter 
+  })
+// creer l'array de ces lettres
+const arrFourLetters = []
+let mainLetter = document.querySelector('.letter')
+let myCards = document.querySelectorAll('.choice')
+let myAnswers = document.querySelectorAll('.answer')
+// function putInitialLetterInCards(){
 // }
-// si c'est la bonne lettre c'est ok donc mettre la lettre en vert sinon la mettre en rouge
-//si c'est ok passer à une lettre suivante
-//quand on a fait 5 passages avoir le choix entre continuer ou pas et si on continue, passer à l'étape de reconnissance des lettres debut milieu fin
 
-// 
-//si lettre principal correspond à la lettre de son objet 'début milieu ou fin" matcher (utiliser fonction isValid)
+// 1ere function = récupérer de manière aléatoire 4 lettres venant du tableau en évitant les doublons
+function getFourLettersFromArray(){
+  // executer tant que l'array n'a pas 4 elements
+  while ( arrFourLetters.length < 4) {
+    // récuperer une lettre au hasard du map
+    const mainRandomLetter = filterInitialLetters[Math.floor(Math.random() * filterInitialLetters.length)]
+    // les mettres dans le tableau à condition qu'elle y soit pas
+    if (!arrFourLetters.includes(mainRandomLetter)){
+      arrFourLetters.push(mainRandomLetter)
+    }
+  }
+}
+// l'appeler
+getFourLettersFromArray()
+
+// 2em function = insérer une lettre au hasard à chaque carte et à la lettre principal 
+function myShuffle(){
+  //mélanger les lettres dans l'array avant de les placer dans les cards
+  function shuffleArray(arrFourLetters){
+    return arrFourLetters.sort(()=> Math.random() - 0.5);
+  }
+  // récupérer la function précedente dans une const
+  const shuffleArrayConst = shuffleArray(arrFourLetters)
+  // mettre une lettre au hasard au main et cards
+  for (i = 0; i < shuffleArrayConst.length ; i++){
+    mainLetter.innerText = shuffleArrayConst[i]
+    myAnswers[i].innerText = shuffleArrayConst[i]
+  }
+}
+ myShuffle() 
+
+// 3em function = raffraichir la page seulement si on click sur une carte correspondante à la principal, au bout de 10 raffraichissement afficher la page suivante en affichant un bouton
+function checkValidate(){
+  // appliquer la fonction en faisant le tour de chaque réponse
+  for (i=0 ; i < 4 ; i++){
+    if( myAnswers[i].textContent === mainLetter.textContent){
+      // récupérer le parent de la lettre et changer sa couleur
+        let goodAnswer = myAnswers[i].parentElement;
+         goodAnswer.addEventListener('click', function(){
+          goodAnswer.style.backgroundColor = 'green'
+          location.reload()
+         })
+    }else{
+      let badAnswer = myAnswers[i].parentElement
+      badAnswer.addEventListener('click', function(){
+        badAnswer.classList.toggle('bg-red')
+       })
+    }
+  }
+}
+checkValidate()
+ /*  let innerCards = myCards.innerText
+  innerCards.forEach(element => {
+    if( element === mainLetter.innerText)
+      checkValidInitialLetter()
+  }); */
+
+
+// integre à Lettre
+// document.querySelector('.letter').innerText = mainRandomLetter
