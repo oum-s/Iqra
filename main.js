@@ -369,25 +369,26 @@ const App = {
     // 3em function = raffraichir la page seulement si on click sur une carte correspondante à la principal, au bout de 10 raffraichissement afficher la page suivante en affichant un bouton
     checkValidate : function(){
       // appliquer la fonction en faisant le tour de chaque réponse
-      for (i=0 ; i < 4 ; i++){
-        if( myAnswers[i].textContent === mainLetter.textContent){
-          // récupérer le parent de la lettre et changer sa couleur
-            let goodAnswer = myAnswers[i].parentElement;
-              goodAnswer.addEventListener('click', function(){
-              goodAnswer.style.backgroundColor = 'green'
-              setTimeout(()=>{
-                location.reload()
-              },1500) 
-            })
-           
-        }else{
-          let badAnswer = myAnswers[i].parentElement
-          badAnswer.addEventListener('click', function(){
-            badAnswer.classList.toggle('bg-red')
-          })
-        }
-      }
+          for (i=0 ; i < 4 ; i++){
+            if( myAnswers[i].textContent === mainLetter.textContent){
+              // récupérer le parent de la lettre et changer sa couleur
+                let goodAnswer = myAnswers[i].parentElement;
+                  goodAnswer.addEventListener('click', function(){
+                  goodAnswer.style.backgroundColor = 'green'
+                  setTimeout(()=>{
+                    location.reload()
+                  },1500) 
+                })
+               
+            }else{
+              let badAnswer = myAnswers[i].parentElement
+              badAnswer.addEventListener('click', function(){
+                badAnswer.classList.toggle('bg-red')
+              })
+            }
+          }
     }
+    
   }
 
  /*  let innerCards = myCards.innerText
