@@ -1,4 +1,3 @@
-//Utiliser PI pour voir toutes les lettres ?
 let alphabet = [
   {
      letter : "ﺍ",
@@ -34,7 +33,17 @@ let alphabet = [
       `J'ai vu un ${this.word}`
     }
   },
+  {
+    letter : "ث",
+    begining : "ثـ",
+    middle : "ـثـ",
+    end : "ـث",
+    word: "Château",
  
+    sentence(){
+      `J'ai vu un ${this.word}`
+    }
+  },
   {
     letter : "ﺝ",
     begining : "ﺟ",
@@ -216,10 +225,54 @@ let alphabet = [
  }
  },
  {
-   letter : "ﺱ",
-   begining : "ﺳ",
-   middle : 'ﺴ',
-   end : "'ـس",
+  letter : "ق",
+  begining : "قـ",
+  middle : "ـقـ",
+  end : "ـق",
+  word: "Elephant",
+  
+  sentence(){
+    `J'ai vu un ${this.word}`
+  }
+ },
+ {
+    letter : "ك",
+    begining : "كـ",
+    middle : "ـكـ",
+    end : "ـك",
+    word: "Elephant",
+    
+    sentence(){
+      `J'ai vu un ${this.word}`
+    }
+ },
+ {
+  letter : "ل",
+  begining : "	لـ",
+  middle : "ـلـ",
+  end : "	ــل",
+  word: "Elephant",
+  
+  sentence(){
+    `J'ai vu un ${this.word}`
+  }
+  },
+ {
+  letter : "م",
+  begining : "مـ		",
+  middle : "ـمـ	",
+  end : "ـم",
+  word: "Elephant",
+  
+  sentence(){
+    `J'ai vu un ${this.word}`
+  }
+ },
+ {
+   letter : "ن",
+   begining : "نـ",
+   middle : 'ـنـ',
+   end : "'ـن",
    word: "Astronaute",
  
    sentence(){
@@ -227,10 +280,10 @@ let alphabet = [
    }
  },
  {
-  letter : "ش",
-  begining : "شـ",
-  middle : 'ـشـ',
-  end :"ـش",
+  letter : "ه",
+  begining : "هـ",
+  middle : 'ـهـ',
+  end :"ـه",
   word: "Bateau",
  
   sentence(){
@@ -239,10 +292,10 @@ let alphabet = [
  },
  
  {
-  letter : "ص",
-  begining : "صـ",
-  middle : "ـصـ",
-  end : "ـص",
+  letter : "و",
+  begining : "و",
+  middle : "ـو",
+  end : "ـو",
   word: "Château",
  
   sentence(){
@@ -251,98 +304,44 @@ let alphabet = [
  },
  
  {
-  letter : "ض",
-  begining : "ضـ",
-  middle : "ـضـ",
-  end : "ـض",
+  letter : "ي",
+  begining : "يـ",
+  middle : "ـيـ",
+  end : "ـي",
   word: "Dauphin",
  
   sentence(){
     `J'ai vu un ${this.word}`
   }
  },
- 
- {
-  letter : "ط",
-  begining : "طـ",
-  middle : "ـطـ",
-  end : "ـط",
-  word: "Elephant",
- 
-  sentence(){
-    `J'ai vu un ${this.word}`
-  }
- },
- {
- letter : "ظ",
- begining : "ظـ",
- middle : "ـظـ",
- end : "ـظ",
- word: "Elephant",
- 
- sentence(){
-   `J'ai vu un ${this.word}`
- }
- },
- {
- letter : "ع",
- begining : "عـ",
- middle : "ـعـ",
- end : "ـع",
- word: "Elephant",
- 
- sentence(){
-   `J'ai vu un ${this.word}`
- }
- },
- {
- letter : "غ",
- begining : "غـ",
- middle : "ـغـ",
- end : "ـغ",
- word: "Elephant",
- 
- sentence(){
-   `J'ai vu un ${this.word}`
- }
- },
- {
- letter : "ف",
- begining : "فـ",
- middle : "ـفـ",
- end : "ـف",
- word: "Elephant",
- 
- sentence(){
-   `J'ai vu un ${this.word}`
- }
- },
- ]
+
+]
+// début milieu fin des lettres
 const begFilterLetters = alphabet.map(all => {
-  return all.begining
-  })
+  return all.begining ;
+})
 const middleFilterLetters = alphabet.map(all => {
   return all.middle
-  })
+})
 const endFilterLetters = alphabet.map(all => {
   return all.end
-  })
-const bon = [begFilterLetters, middleFilterLetters , endFilterLetters ]
-console.log(bon)
- const filterAllLetters = alphabet.map(all => {
-   return all.begining , all.middle , all.end
-   })
- const myMainLetterArr = alphabet.map(main=>{
-  return main.letter
- })
- // creer l'array de ces lettres
- const arrFourLettersFromAll = []
- let mainLetter = document.querySelector('.letter')
- let myCards = document.querySelectorAll('.choice')
- let myAnswers = document.querySelectorAll('.answer')
- //  // récuperer une lettre au hasard 
- const mainRandomLetter = myMainLetterArr[Math.floor(Math.random() * myMainLetterArr.length)]
+})
+console.log(begFilterLetters)
+// mélange des trois tableaux
+let filterAllLetters = [...begFilterLetters, ...middleFilterLetters, ...endFilterLetters]
+// creer l'array de ces lettres
+const arrFourLettersFromAll = []
+let mainLetter = document.querySelector('.letter')
+let myCards = document.querySelectorAll('.choice')
+let myAnswers = document.querySelectorAll('.answer')
+
+// lettre principal qui s'affiche 
+// const myMainLetterArr = alphabet.map(main=>{
+// return main.letter
+// }) 
 //  récupérer lettre
+
+
 let findMatchingLettersOfAnsw
 let arrOfMainLetterObj = []
 
@@ -351,15 +350,10 @@ let arrOfMainLetterObj = []
    init: function(){
    
      Appl.getFourLettersFromAll(),
-     Appl.myShuffleFromAll()
-     /* Appl.getMainLetterDetails(),
-     Appl.checkValidateForAll(); */
+     Appl.myShuffleFromAll(),
+     Appl.checkValidateForAll();
    },
-   // les variables dont j'ai besoin ==>
- // filter juste les lettres initiales de l'alphabet
  
-      // function
-     
      // 1ere function = récupérer de manière aléatoire 4 lettres venant du tableau en évitant les doublons
      getFourLettersFromAll : function(){
        // executer tant que l'array n'a pas 4 elements
@@ -368,7 +362,7 @@ let arrOfMainLetterObj = []
          const allRandomLetter = filterAllLetters[Math.floor(Math.random() * filterAllLetters.length)]
         /* //  recup lettre au hasard de l'object du main
         const randomMainLetterArr = filterAllLetters[Math.floor(Math.random() * filterAllLetters.length)] */
-         // les mettres dans le tableau à condition qu'elle y soit pas
+        // les mettres dans le tableau à condition qu'elle y soit pas
          if (!arrFourLettersFromAll.includes(allRandomLetter)){
            arrFourLettersFromAll.push(allRandomLetter)
          }
@@ -382,22 +376,25 @@ let arrOfMainLetterObj = []
        }
        // récupérer la function précedente dans une const
        const shuffleArrayConst = shuffleArray(arrFourLettersFromAll)
-       console.log(shuffleArrayConst)
        
       //  const shufflearrOfMainLetterObject = shuffleArray(arrOfMainLetterObj)
        // mettre une lettre au hasard au main et cards
        for (i = 0; i < shuffleArrayConst.length ; i++){
          myAnswers[i].innerText = shuffleArrayConst[i]
        }
+       console.log(shuffleArrayConst)
        /* mainLetter.innerText = mainRandomLetter */
-     },
-     /* getMainLetterDetails : function(){
-      let catchMainLetterObject = alphabet.find( harf => harf.letter === mainLetter.textContent)
-      console.log(catchMainLetterObject)
-      arrOfMainLetterObj.push(catchMainLetterObject.begining)
-      arrOfMainLetterObj.push(catchMainLetterObject.middle)
-      arrOfMainLetterObj.push(catchMainLetterObject.end)
-      console.log(arrOfMainLetterObj)
+      let shuffleArrayAgain = function(shuffleArrayConst){
+        return shuffleArrayConst.sort(()=> Math.random() - 0.5);
+      }
+      // include la lettre
+      let myMain 
+      /* for (i=0; i < shuffleArrayAgain ; i++){
+        if( shuffleArrayAgain[i] === begFilterLetters[i]){
+          return true
+        } else if(shuffleArrayAgain[i] === middleFilterLetters[i]){
+          return tru
+      }; */
     },
      // 3em function = raffraichir la page seulement si on click sur une carte correspondante à la principal, au bout de 10 raffraichissement afficher la page suivante en affichant un bouton
      checkValidateForAll : function(){
@@ -420,7 +417,7 @@ let arrOfMainLetterObj = []
                })
              }
            }
-     } */
+     }
      
    }
  
