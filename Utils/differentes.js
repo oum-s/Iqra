@@ -14,7 +14,7 @@ let alphabet = [
     letter : "ﺏ",
     begining : "ﺑ",
     middle : 'ﺒ',
-    end : "B FIN",
+    end : "ـب",
     word: "Bateau",
  
     sentence(){
@@ -23,7 +23,7 @@ let alphabet = [
   },
  
   {
-    letter : "ﺖ",
+    letter : "ت",
     begining : "ﺗ",
     middle : "ﺘ",
     end : "ﺖ",
@@ -33,17 +33,7 @@ let alphabet = [
       `J'ai vu un ${this.word}`
     }
   },
-  {
-    letter : "ث",
-    begining : "ثـ",
-    middle : "ـثـ",
-    end : "ـث",
-    word: "Château",
  
-    sentence(){
-      `J'ai vu un ${this.word}`
-    }
-  },
   {
     letter : "ﺝ",
     begining : "ﺟ",
@@ -225,54 +215,10 @@ let alphabet = [
  }
  },
  {
-  letter : "ق",
-  begining : "قـ",
-  middle : "ـقـ",
-  end : "ـق",
-  word: "Elephant",
-  
-  sentence(){
-    `J'ai vu un ${this.word}`
-  }
- },
- {
-    letter : "ك",
-    begining : "كـ",
-    middle : "ـكـ",
-    end : "ـك",
-    word: "Elephant",
-    
-    sentence(){
-      `J'ai vu un ${this.word}`
-    }
- },
- {
-  letter : "ل",
-  begining : "	لـ",
-  middle : "ـلـ",
-  end : "	ــل",
-  word: "Elephant",
-  
-  sentence(){
-    `J'ai vu un ${this.word}`
-  }
-  },
- {
-  letter : "م",
-  begining : "مـ		",
-  middle : "ـمـ	",
-  end : "ـم",
-  word: "Elephant",
-  
-  sentence(){
-    `J'ai vu un ${this.word}`
-  }
- },
- {
-   letter : "ن",
-   begining : "نـ",
-   middle : 'ـنـ',
-   end : "'ـن",
+   letter : "ﺱ",
+   begining : "ﺳ",
+   middle : 'ﺴ',
+   end : "'ـس",
    word: "Astronaute",
  
    sentence(){
@@ -280,10 +226,10 @@ let alphabet = [
    }
  },
  {
-  letter : "ه",
-  begining : "هـ",
-  middle : 'ـهـ',
-  end :"ـه",
+  letter : "ش",
+  begining : "شـ",
+  middle : 'ـشـ',
+  end :"ـش",
   word: "Bateau",
  
   sentence(){
@@ -292,10 +238,10 @@ let alphabet = [
  },
  
  {
-  letter : "و",
-  begining : "و",
-  middle : "ـو",
-  end : "ـو",
+  letter : "ص",
+  begining : "صـ",
+  middle : "ـصـ",
+  end : "ـص",
   word: "Château",
  
   sentence(){
@@ -304,18 +250,73 @@ let alphabet = [
  },
  
  {
-  letter : "ي",
-  begining : "يـ",
-  middle : "ـيـ",
-  end : "ـي",
+  letter : "ض",
+  begining : "ضـ",
+  middle : "ـضـ",
+  end : "ـض",
   word: "Dauphin",
  
   sentence(){
     `J'ai vu un ${this.word}`
   }
  },
-
-]
+ 
+ {
+  letter : "ط",
+  begining : "طـ",
+  middle : "ـطـ",
+  end : "ـط",
+  word: "Elephant",
+ 
+  sentence(){
+    `J'ai vu un ${this.word}`
+  }
+ },
+ {
+ letter : "ظ",
+ begining : "ظـ",
+ middle : "ـظـ",
+ end : "ـظ",
+ word: "Elephant",
+ 
+ sentence(){
+   `J'ai vu un ${this.word}`
+ }
+ },
+ {
+ letter : "ع",
+ begining : "عـ",
+ middle : "ـعـ",
+ end : "ـع",
+ word: "Elephant",
+ 
+ sentence(){
+   `J'ai vu un ${this.word}`
+ }
+ },
+ {
+ letter : "غ",
+ begining : "غـ",
+ middle : "ـغـ",
+ end : "ـغ",
+ word: "Elephant",
+ 
+ sentence(){
+   `J'ai vu un ${this.word}`
+ }
+ },
+ {
+ letter : "ف",
+ begining : "فـ",
+ middle : "ـفـ",
+ end : "ـف",
+ word: "Elephant",
+ 
+ sentence(){
+   `J'ai vu un ${this.word}`
+ }
+ },
+ ]
 // début milieu fin des lettres
 const begFilterLetters = alphabet.map(all => {
   return all.begining ;
@@ -331,7 +332,7 @@ console.log(begFilterLetters)
 let filterAllLetters = [...begFilterLetters, ...middleFilterLetters, ...endFilterLetters]
 // creer l'array de ces lettres
 const arrFourLettersFromAll = []
-let mainLetter = document.querySelector('.letter')
+let mainLetter = document.querySelector('h2')
 let myCards = document.querySelectorAll('.choice')
 let myAnswers = document.querySelectorAll('.answer')
 

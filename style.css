@@ -1,7 +1,9 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+Arabic:wght@400;500&display=swap');
 *{
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  font-family: 'Noto Sans Arabic', sans-serif;
 }
 
 body{
@@ -13,7 +15,6 @@ header, footer{
   background-color: gainsboro;
   
 }
-
 li{
   margin: 10px;
 }
@@ -24,7 +25,10 @@ ul, li, a{
 }
 .container{
   flex-direction: column;
-  height: 90vh;
+  height: 90.5vh;
+}
+#container{
+  height: 85vh;
 }
 
 .container, section, ul, header, .choices {
@@ -37,21 +41,23 @@ section{
   width: 30%;
   margin: 10px;
   border-radius: 10px;
+  text-align: center;
 }
-section:hover{
+.choice:hover{
   box-shadow: gainsboro 1px 5px 5px;
   cursor: pointer;
 }
 
 .first{
-  background-color: aqua;
+  background-color: rgb(154, 252, 255);
 }
 .second{
   background-color: pink;
 }
+
 /* PAGE 2 */
 .play{
-  background-color: aqua;
+  background-color: rgb(154, 252, 255);
   max-height: 100px;
   width: 200px;
 }
@@ -65,7 +71,8 @@ section:hover{
   justify-content: space-around;
 }
 .choice{
-  background-color: aqua;
+  background-color: rgb(154, 252, 255);
+  font-size: 2rem;
 }
 .letter{
   font-weight: bold;
@@ -74,4 +81,11 @@ section:hover{
 
 .bg-red {
   background-color: red;
+}
+
+i{
+  padding: 15px;
+  margin: 12px 15px;
+  background-color: gainsboro;
+  border-radius: 40%;
 }

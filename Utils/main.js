@@ -4,7 +4,7 @@ let alphabet = [
     letter : "ﺍ",
     begining : "ﺍ",
     middle : 'ﺎ',
-    end : "'ﺎ",
+    end : "ﺎ",
     word: "Astronaute",
 
     sentence(){
@@ -15,7 +15,7 @@ let alphabet = [
    letter : "ﺏ",
    begining : "ﺑ",
    middle : 'ﺒ',
-   end : "B FIN",
+   end : "ـب",
    word: "Bateau",
 
    sentence(){
@@ -117,7 +117,7 @@ let alphabet = [
   letter : "ﺱ",
   begining : "ﺳ",
   middle : 'ﺴ',
-  end : "'ـس",
+  end : "ـس",
   word: "Astronaute",
 
   sentence(){
@@ -219,7 +219,7 @@ sentence(){
   letter : "ﺱ",
   begining : "ﺳ",
   middle : 'ﺴ',
-  end : "'ـس",
+  end : "ـس",
   word: "Astronaute",
 
   sentence(){
@@ -323,9 +323,10 @@ const filterInitialLetters = alphabet.map(initial => {
   })
 // creer l'array de ces lettres
 const arrFourLetters = []
-let mainLetter = document.querySelector('.letter')
+let mainLetter = document.querySelector('h2')
 let myCards = document.querySelectorAll('.choice')
 let myAnswers = document.querySelectorAll('.answer')
+
 // function putInitialLetterInCards(){
 // }
 const App = {
@@ -364,10 +365,12 @@ const App = {
         mainLetter.innerText = shuffleArrayConst[i]
         myAnswers[i].innerText = shuffleArrayConst[i]
       }
+      
     },
 
     // 3em function = raffraichir la page seulement si on click sur une carte correspondante à la principal, au bout de 10 raffraichissement afficher la page suivante en affichant un bouton
     checkValidate : function(){
+      localStorage.setItem("win", 0);
       // appliquer la fonction en faisant le tour de chaque réponse
           for (i=0 ; i < 4 ; i++){
             if( myAnswers[i].textContent === mainLetter.textContent){
@@ -378,6 +381,9 @@ const App = {
                   setTimeout(()=>{
                     location.reload()
                   },1500) 
+                  var win = (parseInt(localStorage.getItem('win'))+1);
+                  localStorage.setItem("win", win.toString());
+                  console.log(win);
                 })
                
             }else{
