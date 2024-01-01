@@ -5,7 +5,7 @@ let alphabet = [
     begining : "ﺍ",
     middle : 'ﺎ',
     end : "ﺎ",
-    word: "Astronaute",
+    word: "أسد",
 
     sentence(){
       `J'ai vu un ${this.word}`
@@ -16,7 +16,7 @@ let alphabet = [
    begining : "ﺑ",
    middle : 'ﺒ',
    end : "ـب",
-   word: "Bateau",
+   word: "بَابٌ",
 
    sentence(){
      `J'ai vu un ${this.word}`
@@ -24,23 +24,34 @@ let alphabet = [
  },
 
  {
-   letter : "ﺖ",
+   letter : "ت",
    begining : "ﺗ",
    middle : "ﺘ",
    end : "ﺖ",
-   word: "Château",
+   word: "تَاجِرٌ",
 
    sentence(){
      `J'ai vu un ${this.word}`
    }
  },
+ {
+  letter : "ث",
+  begining : "ثـ",
+  middle : "ـثـ",
+  end : "ـث",
+  word: "ثَوْبٌ",
+
+  sentence(){
+    `J'ai vu un ${this.word}`
+  }
+},
 
  {
    letter : "ﺝ",
    begining : "ﺟ",
    middle : "ﺠ",
    end : "ﺞ",
-   word: "Dauphin",
+   word: "جِلْبَابٌ",
 
    sentence(){
      `J'ai vu un ${this.word}`
@@ -52,7 +63,7 @@ let alphabet = [
    begining : "ﺣ",
    middle : "ﺤ",
    end : "ﺢ",
-   word: "Elephant",
+   word: "حِمَارٌ",
 
    sentence(){
      `J'ai vu un ${this.word}`
@@ -63,7 +74,7 @@ let alphabet = [
   begining : "ﺧ",
   middle : "ﺨ",
   end : "ﺦ",
-  word: "Elephant",
+  word: "خُرُوفٌ",
 
   sentence(){
     `J'ai vu un ${this.word}`
@@ -74,7 +85,7 @@ let alphabet = [
   begining : "ﺩ",
   middle : "ﺪ",
   end : "ﺪ",
-  word: "Elephant",
+  word: "دَجَاجَةٌ",
 
   sentence(){
     `J'ai vu un ${this.word}`
@@ -85,7 +96,7 @@ let alphabet = [
   begining : "ﺫ",
   middle : "ﺬ",
   end : "ﺬ",
-  word: "Elephant",
+  word: "ذِئْبٌ",
 
   sentence(){
     `J'ai vu un ${this.word}`
@@ -96,7 +107,7 @@ let alphabet = [
   begining : "ﺭ",
   middle : "ﺮ",
   end : "ﺮ",
-  word: "Elephant",
+  word: "ريشة",
 
   sentence(){
     `J'ai vu un ${this.word}`
@@ -107,7 +118,7 @@ let alphabet = [
   begining : "ﺯ",
   middle : "ﺰ",
   end : "ﺰ",
-  word: "Elephant",
+  word: "زَيْتُونٌ",
 
   sentence(){
     `J'ai vu un ${this.word}`
@@ -118,7 +129,7 @@ let alphabet = [
   begining : "ﺳ",
   middle : 'ﺴ',
   end : "ـس",
-  word: "Astronaute",
+  word: "سَمَكَةٌ",
 
   sentence(){
     `J'ai vu un ${this.word}`
@@ -129,7 +140,7 @@ let alphabet = [
  begining : "شـ",
  middle : 'ـشـ',
  end :"ـش",
- word: "Bateau",
+ word: "شَجَرَةٌ",
 
  sentence(){
    `J'ai vu un ${this.word}`
@@ -141,7 +152,7 @@ let alphabet = [
  begining : "صـ",
  middle : "ـصـ",
  end : "ـص",
- word: "Château",
+ word: "صَقَرٌ",
 
  sentence(){
    `J'ai vu un ${this.word}`
@@ -153,7 +164,7 @@ let alphabet = [
  begining : "ضـ",
  middle : "ـضـ",
  end : "ـض",
- word: "Dauphin",
+ word: "ضَفَدةٌ",
 
  sentence(){
    `J'ai vu un ${this.word}`
@@ -165,7 +176,7 @@ let alphabet = [
  begining : "طـ",
  middle : "ـطـ",
  end : "ـط",
- word: "Elephant",
+ word: "طَلَب",
 
  sentence(){
    `J'ai vu un ${this.word}`
@@ -176,7 +187,7 @@ letter : "ظ",
 begining : "ظـ",
 middle : "ـظـ",
 end : "ـظ",
-word: "Elephant",
+word: "ظُـفْـرٌ",
 
 sentence(){
   `J'ai vu un ${this.word}`
@@ -187,7 +198,7 @@ letter : "ع",
 begining : "عـ",
 middle : "ـعـ",
 end : "ـع",
-word: "Elephant",
+word: "عَـقْرَبٌ",
 
 sentence(){
   `J'ai vu un ${this.word}`
@@ -198,7 +209,7 @@ letter : "غ",
 begining : "غـ",
 middle : "ـغـ",
 end : "ـغ",
-word: "Elephant",
+word: "عَـقْرَبٌ",
 
 sentence(){
   `J'ai vu un ${this.word}`
@@ -209,114 +220,102 @@ letter : "ف",
 begining : "فـ",
 middle : "ـفـ",
 end : "ـف",
-word: "Elephant",
+word: "فِـيـلٌ",
 
 sentence(){
   `J'ai vu un ${this.word}`
 }
 },
 {
-  letter : "ﺱ",
-  begining : "ﺳ",
-  middle : 'ﺴ',
-  end : "ـس",
-  word: "Astronaute",
-
+  letter : "ق",
+  begining : "قـ",
+  middle : "ـقـ",
+  end : "ـق",
+  word: "قِـرْدٌ",
+  
   sentence(){
     `J'ai vu un ${this.word}`
   }
 },
 {
- letter : "ش",
- begining : "شـ",
- middle : 'ـشـ',
- end :"ـش",
- word: "Bateau",
-
- sentence(){
-   `J'ai vu un ${this.word}`
- }
-},
-
-{
- letter : "ص",
- begining : "صـ",
- middle : "ـصـ",
- end : "ـص",
- word: "Château",
-
- sentence(){
-   `J'ai vu un ${this.word}`
- }
-},
-
-{
- letter : "ض",
- begining : "ضـ",
- middle : "ـضـ",
- end : "ـض",
- word: "Dauphin",
-
- sentence(){
-   `J'ai vu un ${this.word}`
- }
-},
-
-{
- letter : "ط",
- begining : "طـ",
- middle : "ـطـ",
- end : "ـط",
- word: "Elephant",
-
- sentence(){
-   `J'ai vu un ${this.word}`
- }
+    letter : "ك",
+    begining : "كـ",
+    middle : "ـكـ",
+    end : "ـك"
+,
+    word: "كَـلْبٌ",
+    
+    sentence(){
+      `J'ai vu un ${this.word}`
+    }
 },
 {
-letter : "ظ",
-begining : "ظـ",
-middle : "ـظـ",
-end : "ـظ",
-word: "Elephant",
+      letter : "ل",
+      begining : "لـ",
+      middle : "ـلـ",
+      end : "ـل",
+      word: "لَـبَـنٌ",
+      
+      sentence(){
+        `J'ai vu un ${this.word}`
+      }
+},
+{
+  letter : "م",
+  begining : "مـ",
+  middle : "ـمـ",
+  end : "ـم",
+  word: "مَـطَـرٌ",
+  
+  sentence(){
+    `J'ai vu un ${this.word}`
+  }
+},
+{
+  letter : "ن",
+  begining : "نـ",
+  middle : "ـنـ",
+  end : "ـن",
+  word: "نَارٌ",
+  
+  sentence(){
+    `J'ai vu un ${this.word}`
+  }
+},
+{
+letter : "ه",
+begining : "هـ",
+middle : "ـهـ",
+end : "ـه",
+word: "هُدْهُدٌ",
 
 sentence(){
   `J'ai vu un ${this.word}`
 }
 },
 {
-letter : "ع",
-begining : "عـ",
-middle : "ـعـ",
-end : "ـع",
-word: "Elephant",
-
-sentence(){
-  `J'ai vu un ${this.word}`
-}
+  letter : "و",
+  begining : "و",
+  middle : "ـو",
+  end : "ـو",
+  word: "وَجْـهٌ",
+  
+  sentence(){
+    `J'ai vu un ${this.word}`
+  }
 },
 {
-letter : "غ",
-begining : "غـ",
-middle : "ـغـ",
-end : "ـغ",
-word: "Elephant",
-
-sentence(){
-  `J'ai vu un ${this.word}`
-}
+  letter : "ي",
+  begining : "يـ",
+  middle : "ـيـ",
+  end : "ـي",
+  word: "يَـدٌ",
+  
+  sentence(){
+    `J'ai vu un ${this.word}`
+  }
 },
-{
-letter : "ف",
-begining : "فـ",
-middle : "ـفـ",
-end : "ـف",
-word: "Elephant",
-
-sentence(){
-  `J'ai vu un ${this.word}`
-}
-},
+,
 ]
 const filterInitialLetters = alphabet.map(initial => {
   return initial.letter 
@@ -389,7 +388,7 @@ const App = {
             }else{
               let badAnswer = myAnswers[i].parentElement
               badAnswer.addEventListener('click', function(){
-                badAnswer.classList.toggle('bg-red')
+              badAnswer.classList.toggle('bg-red')
               })
             }
           }
